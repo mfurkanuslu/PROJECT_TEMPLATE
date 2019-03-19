@@ -16,8 +16,8 @@ add_subdirectory(src)
 #    add_subdirectory(doc)
 #endif()
 
-option(BUILD_TEST "Build tests" OFF)
-if(BUILD_TEST)
+option(BUILD_TESTS "Build tests" OFF)
+if(BUILD_TESTS)
     set(BUILD_TESTING ON)
 endif()
 

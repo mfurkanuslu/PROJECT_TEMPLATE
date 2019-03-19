@@ -1,5 +1,4 @@
 build/
-test/external/googletest/*
 
 ### CMake ###
 cmake-build-*/

@@ -1,9 +1,7 @@
 #include <iostream>
 
-#include "version.h"
-
 int main(int argc, char *argv[])
 {
-    std::cout << "version: " << VERSION << '\n';
+    std::cout << "TEMPLATE PROJECT" << '\n';
     return 0;
 }
