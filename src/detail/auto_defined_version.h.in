@@ -1,0 +1,3 @@
+#pragma once
+
+#define AUTO_DEFINED_VERSION "@AUTO_DEFINED_VERSION@"

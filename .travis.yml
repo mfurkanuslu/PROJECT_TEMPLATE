@@ -1,0 +1,23 @@
+language: cpp
+dist: xenial
+
+compiler:
+  - gcc
+  - clang
+
+#env:
+#  global:
+#  matrix:
+
+#before_install:
+
+matrix:
+  fast_finish: true
+  - mkdir build
+  - cd build
+  - cmake -G "Unix Makefiles" ..
+  - cd ..
+
+script:
+  - cd build
+  - cmake --build .

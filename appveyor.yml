@@ -1,0 +1,53 @@
+version: '{build}'
+
+clone_depth: 10
+
+matrix:
+  fast_finish: true
+
+environment:
+  matrix:
+    - VisualStudioVersion: 12.0
+      platform: Win32
+      configuration: Debug
+      vcvarsall_platform: x86
+      PlatformToolset: v120
+    - VisualStudioVersion: 12.0
+      platform: Win32
+      configuration: Release
+      vcvarsall_platform: x86
+      PlatformToolset: v120
+    - VisualStudioVersion: 12.0
+      platform: x64
+      configuration: Debug
+      vcvarsall_platform: x64
+      PlatformToolset: v120
+    - VisualStudioVersion: 12.0
+      platform: x64
+      configuration: Release
+      vcvarsall_platform: x64
+      PlatformToolset: v120
+    - VisualStudioVersion: 14.0
+      platform: Win32
+      configuration: Debug
+      vcvarsall_platform: x86
+      PlatformToolset: v140
+    - VisualStudioVersion: 14.0
+      platform: Win32
+      configuration: Release
+      vcvarsall_platform: x86
+      PlatformToolset: v140
+    - VisualStudioVersion: 14.0
+      platform: x64
+      configuration: Debug
+      vcvarsall_platform: x64
+      PlatformToolset: v140
+
+build_script:
+    # - git submodule update --init
+    - cmake .
+    - cmake --build .
+
+test_script:
+    - ctest
+#artifacts:
