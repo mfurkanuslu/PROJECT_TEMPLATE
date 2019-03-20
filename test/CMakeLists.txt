@@ -27,7 +27,7 @@ add_executable(unittests ${_TEST_FILES})
 #target_include_directories(unittests PRIVATE ${GTEST_INCLUDE_DIRS})
 #target_link_libraries(unittests PRIVATE ${GTEST_BOTH_LIBRARIES})
 # target_link_libraries(unittests PRIVATE GTest::GTest GTest::Main)
-target_link_libraries(unittests PRIVATE gtest gtest_main)
+target_link_libraries(unittests PRIVATE gtest gtest_main gmock gmock_main)
 
 include(GoogleTest)
 gtest_discover_tests(unittests)
