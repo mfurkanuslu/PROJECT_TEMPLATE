@@ -33,7 +33,7 @@ build_script:
         $env:CXXFLAGS='-m32'
         $env:CFLAGS='-m32'
       }
-  - cmake .. -G Ninja -Wdev -DCMAKE_BUILD_TYPE=%CONFIGURATION% -DBUILD_TEST=ON
+  - cmake .. -G Ninja -Wdev -DCMAKE_BUILD_TYPE=%CONFIGURATION% -DBUILD_TESTS=ON
   - ninja -v
 
 test_script:

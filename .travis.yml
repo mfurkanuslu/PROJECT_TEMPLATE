@@ -15,7 +15,7 @@ matrix:
 install:
   - mkdir -p build
   - set +e; cd build; set -e; pwd
-  - cmake .. -G "Unix Makefiles" -Wdev -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DBUILD_TEST=ON
+  - cmake .. -G "Unix Makefiles" -Wdev -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DBUILD_TESTS=ON
   - cat CMakeFiles/CMakeError.log || true
   - cat CMakeFiles/CMakeOutput.log || true
   - make -j2 VERBOSE=1
