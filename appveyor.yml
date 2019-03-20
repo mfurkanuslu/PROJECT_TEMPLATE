@@ -20,22 +20,14 @@ install:
         7z x -y ninja-win.zip -oC:\ninja-build
       }
       $env:PATH="C:\ninja-build;$env:PATH"
-  - for /f "tokens=1* delims=" %%i in ('"%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -latest -property installationPath') do call "%%i\VC\Auxiliary\Build\vcvarsall.bat" %PLATFORM:x86=x64_x86%
+  - for /f "tokens=1* delims=" %%i in ('"%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -latest -property installationPath') do call "%%i\VC\Auxiliary\Build\vcvarsall.bat" %PLATFORM:x86=x86_amd64%
   - cmake --version
   - ninja --version
   - clang-cl --version
 
 build_script:
   - mkdir build && cd build
-  - ps: |
-      $env:CC='clang-cl'
-      $env:CXX='clang-cl'
-      if ($env:PLATFORM -eq "x86") {
-      } else {
-        $env:CXXFLAGS='-m32'
-        $env:CFLAGS='-m32'
-      }
-  - cmake .. -G Ninja -Wdev -DCMAKE_BUILD_TYPE=%CONFIGURATION% -DBUILD_TESTS=ON
+  - cmake .. -G Ninja -Wdev -DCMAKE_CXX_COMPILER=clang-cl -DCMAKE_BUILD_TYPE=%CONFIGURATION% -DBUILD_TESTS=ON
   - ninja -v
 
 test_script:
