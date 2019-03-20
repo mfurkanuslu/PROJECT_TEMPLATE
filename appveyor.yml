@@ -18,7 +18,7 @@ install:
         7z x -y ninja-win.zip -oC:\ninja-build
       }
       $env:PATH="C:\ninja-build;$env:PATH"
-  - for /f "tokens=1* delims=" %%i in ('"%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -latest -property installationPath') do call "%%i\VC\Auxiliary\Build\vcvarsall.bat" %PLATFORM:x86=x64_x86%
+  - for /f "tokens=1* delims=" %i in ('"%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -latest -property installationPath') do call "%i\VC\Auxiliary\Build\vcvarsall.bat" %PLATFORM:x86=x64_x86%
   - cmake --version
   - ninja --version
   - clang-cl --version
