@@ -4,6 +4,7 @@
 using ::testing::Return;
 
 class DummyMock {
+public:
     MOCK_CONST_METHOD0(method, int());
 };
 
