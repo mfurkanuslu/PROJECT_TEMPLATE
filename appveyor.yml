@@ -24,6 +24,7 @@ install:
   - cmake --version
   - ninja --version
   - clang-cl --version
+  - git submodule update --init --remote
 
 build_script:
   - mkdir build && cd build

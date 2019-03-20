@@ -11,6 +11,7 @@ git:
 
 install:
   - cmake --version
+  - git submodule update --init --remote
   - mkdir -p build
   - set +e; cd build; set -e; pwd
   - cmake .. -G "Unix Makefiles" -Wdev -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DBUILD_TESTS=ON
